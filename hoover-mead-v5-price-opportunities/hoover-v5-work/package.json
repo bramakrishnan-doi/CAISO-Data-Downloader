@@ -1,0 +1,29 @@
+{
+  "name": "mead-price-tracker",
+  "version": "1.0.0",
+  "description": "MEAD DA LMP price tracker with CAISO OASIS auto-fetch",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "dependencies": {
+    "adm-zip": "^0.5.16",
+    "sql.js": "^1.11.0"
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.0.0"
+  },
+  "build": {
+    "appId": "com.yourcompany.meadtracker",
+    "productName": "MEAD Price Tracker",
+    "win": {
+      "target": "nsis"
+    },
+    "files": [
+      "src/**/*",
+      "node_modules/sql.js/dist/sql-wasm.wasm"
+    ]
+  }
+}

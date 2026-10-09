@@ -1,0 +1,32 @@
+appId: com.yourcompany.meadtracker
+productName: MEAD Price Tracker
+directories:
+  output: dist
+  buildResources: build
+
+files:
+  - src/**/*
+  - package.json
+
+electronDist: node_modules/electron/dist
+
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+  icon: build/icon.ico
+  signAndEditExecutable: false
+  signDlls: false
+
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: MEAD Price Tracker
+
+# No code signing configured — installer will trigger Windows SmartScreen
+# on first run for each teammate. Click "More info" -> "Run anyway".
+# To remove this warning, a code-signing certificate would need to be
+# purchased and configured here (signingHashAlgorithms, certificateFile, etc).
